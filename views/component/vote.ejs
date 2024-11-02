@@ -1,0 +1,75 @@
+<div class="row ">
+    <button class="col" id="failButton"></button>
+    <div class="col bg-warning" style='margin-top: 20px;'><img class="random-img";></div>
+    <button class="col" id="correctButton"></button>
+</div>
+<div class="debug"></div>
+
+<script>
+
+    $(function () {
+        const point = 100;
+        
+        let score = 0;
+
+        var array = [
+            "images/correct/spanyan (1).png",
+            "images/correct/spanyan (2).png",
+            "images/correct/spanyan (3).png",
+            "images/correct/spanyan (4).png",
+            "images/correct/spanyan (5).png",
+            "images/correct/spanyan (6).png",
+            "images/fail/spanyan (1).png",
+            "images/fail/spanyan (2).png",
+            "images/fail/spanyan (3).png",
+            "images/fail/spanyan (4).png",
+            "images/fail/spanyan (5).png",
+            "images/fail/spanyan (6).png",
+            "images/fail/spanyan (7).png",
+            "images/fail/spanyan (8).png",
+            "images/fail/spanyan (9).png",
+            "images/fail/spanyan (10).png",
+            "images/fail/spanyan (11).png",
+            "images/fail/spanyan (12).png"
+        ];
+
+        var length = array.length;
+
+        function setRandomImage() {
+            var random_num = Math.floor(Math.random() * length);
+
+            let random_img = array[random_num]
+
+            $(".random-img").attr("src", random_img);
+            $(".debug").text(score);
+        }
+
+        function checkAnswer(params) {
+            isCheck = ($(".random-img").attr("src"));
+
+            console.log(isCheck);
+            console.log(isCheck.includes(params));
+
+            if (isCheck.includes(params)) {
+                score -= point
+            } else {
+                score += point
+            }
+            
+            setRandomImage();
+        }
+    
+        setRandomImage();
+
+        $("#failButton").on("click", function () {
+            checkAnswer("fail")
+
+        })
+
+        $("#correctButton").on("click", function () {
+            checkAnswer("correct")
+            
+        })
+    });
+
+</script>

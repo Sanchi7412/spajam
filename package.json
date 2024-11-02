@@ -19,7 +19,6 @@
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
-    "fibers": "^5.0.3",
     "sass": "^1.80.6"
   }
 }

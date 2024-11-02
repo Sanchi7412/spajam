@@ -1,21 +1,57 @@
-<!-- views/start.ejs -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start Page</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom right, #6a11cb, #2575fc); /* グラデーション背景 */
+            font-family: 'Arial', sans-serif; /* フォントを設定 */
+        }
+        #gameArea {
+            text-align: center; /* 中央揃え */
+            margin-bottom: 20px; /* テキストのための余白を追加 */
+            background-color: rgba(255, 255, 255, 0.9); /* 半透明の白背景 */
+            padding: 20px; /* 内側の余白 */
+            border-radius: 15px; /* 角を丸くする */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* シャドウ効果 */
+        }
+        #logo {
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px; /* 画像を少し上にするための余白 */
+        }
+        #tapText {
+            margin: 0; /* 余計な余白を取り除く */
+            padding: 10px 20px; /* ボタン風に余白を追加 */
+            background-color: #007BFF; /* ボタンの色 */
+            color: white; /* ボタンの文字色 */
+            border: none; /* ボタンの枠線を削除 */
+            border-radius: 10px; /* ボタンの角を丸くする */
+            cursor: pointer; /* マウスポインターを変更 */
+            transition: background-color 0.3s; /* ホバー効果のトランジション */
+        }
+        #tapText:hover {
+            background-color: #0056b3; /* ホバー時の色 */
+        }
+    </style>
 </head>
 <body>
     <div id="gameArea">
-        <img src="/images/correct/election.jpg" alt="ゲームロゴ" id="logo">
+        <img src="/images/election.jpg" alt="ゲームロゴ" id="logo">
+        <p id="tapText">画面をタップしてください</p> <!-- タップの指示テキスト -->
     </div>
 
     <!-- タップで移動するスクリプト -->
     <script>
-        // public/start.js
-        document.getElementById('gameArea').addEventListener('click', () => {
-        window.location.href = '/story'; // クリックでstoryページへ移動
+        document.getElementById('tapText').addEventListener('click', () => {
+            window.location.href = '/story'; // クリックでstoryページへ移動
         });
     </script>
 </body>

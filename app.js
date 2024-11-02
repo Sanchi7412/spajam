@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var MainRouter = require('./routes/main');
+var mainRouter = require('./routes/main');
 // var ResultRouter = require('./routes/result');
 var startRouter = require('./routes/start');
 var storyRouter = require('./routes/story');
@@ -27,7 +27,7 @@ app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstra
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/main', MainRouter);
+app.use('/main', mainRouter);
 // app.use('/result', ResultRouter);
 app.use('/start', startRouter);
 app.use('/story', storyRouter);
