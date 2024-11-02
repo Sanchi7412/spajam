@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>えれくしょん！</title>
+
+        <script>
+            var $ = require("jquery");
+            var Timer = require("easytimer.js").Timer;
+
+            var timerInstance = new Timer();
+            function countDown_Timer() {
+                timerInstance.start({countdown: true, startValues: {seconds: 10}});
+
+                timerInstance.addEventListener('secondsUpdated', function (e) {
+                    $('#timer .values').text(timerInstance.getTimeValues().toString());
+                }
+                );
+
+                timerInstance.addEventListener('targetAchieved', function (e) {
+                    alert('Time is up!');
+                    timerInstance.stop();
+                }
+                );
+            }
+        </script>
+    </head>
+    <header>
+        <div id="timer">
+            <div class="values"></div>
+        </div>
+    </header>
+    <body>
+        <script>
+            $(document).ready(countDown_Timer);
+        </script>
+    </body>
+</html>

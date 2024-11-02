@@ -8,12 +8,18 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "cookie-parser": "~1.4.4",
+    "date-utils": "^1.2.21",
     "debug": "~2.6.9",
+    "easytimer.js": "^4.6.0",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "http-errors": "~1.6.3",
     "jquery": "^3.7.1",
     "morgan": "~1.9.1",
     "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "fibers": "^5.0.3",
+    "sass": "^1.80.6"
   }
 }
