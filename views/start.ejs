@@ -2,17 +2,21 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Start Page</title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start Page</title>
 </head>
 <body>
-  <div id="gameArea">
-    <img src="../public/images/correct/logo.png" alt="ゲームロゴ" id="logo">
-  </div>
+    <div id="gameArea">
+        <img src="/images/correct/election.jpg" alt="ゲームロゴ" id="logo">
+    </div>
 
-  <!-- タップで移動するスクリプト -->
-  <script src="/start.js"></script>
+    <!-- タップで移動するスクリプト -->
+    <script>
+        // public/start.js
+        document.getElementById('gameArea').addEventListener('click', () => {
+        window.location.href = '/story'; // クリックでstoryページへ移動
+        });
+    </script>
 </body>
 </html>

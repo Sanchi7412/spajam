@@ -1,25 +1,10 @@
-var expless = requier('express');
-var router = expless.Router();
+var express = require('express');
+var router = express.Router();
 
-router.get('/description',function (req,res) {
+/* GET home page. 石井先生のパクリ*/
+router.get('/', function(req, res, next) {
+   
+    res.render("description");
+});
 
-
-} 
-)
-
-
-
-//テンプレートエンジン読み込み作業
-
-app.set("view engin","ejs");
-
-//静的ファイルの読み込み
-
-app.use('/public', expless.static(__dirname + '/public'));
-
-//ルートにアクセスしてきた時のルートファイル
-
-app.use('/', requier('./routes/index.js'))
-
-
-app.listen(3000);
+module.exports = router;
