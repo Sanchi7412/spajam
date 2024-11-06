@@ -10,4 +10,15 @@ router.get('/', function(req, res, next) {
     res.render("main", data);
 });
 
+router.post("/", function(req, res, next) {
+    console.log(req.body)
+    var score = req.body.score
+
+    req.session.score = score;
+    console.log(req.session.score)
+    console.log("OK")
+
+    res.redirect("/result")
+})
+
 module.exports = router;

@@ -11,44 +11,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="/javascripts/easytimer.js"></script>
 
-    <script>
-        var timerInstance = new easytimer.Timer();
-        function countDown_Timer(time) {
-            timerInstance.start({countdown: true, startValues: {seconds: time}});
-
-            timerInstance.addEventListener('secondsUpdated', function (e) {
-                $('#timer .values').text(timerInstance.getTimeValues().toString());
-            });
-
-            timerInstance.addEventListener('targetAchieved', function (e) {
-                alert('Time is up!');
-                timerInstance.stop();
-            });
-        }
-    </script>
 </head>
 <header>
     
 </header>
 <body>
-    <div class="container text-center bg-light bg-gradient ">
-        <div id="timer" class="row">
-            <h1 class="values col-4 border border-primary"></h1>
-        </div>
-        
-        <div class="d-flex justify-content-center border-bottom border-info">
-          <%-include("./component/slide.ejs") %>
-        </div>
-        
-        <div>
+    <div class="container align-items-center max-width overlay d-flex flex-column justify-content-center ">
+        <div class="row">
           <%-include("./component/vote.ejs") %>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function() {
-        countDown_Timer(30);
-        });
-    </script>
 </body>
 </html>

@@ -1,18 +1,34 @@
-<div class="row ">
-    <button class="col" id="failButton"></button>
-    <div class="col bg-warning" style='margin-top: 20px;'><img class="random-img";></div>
-    <button class="col" id="correctButton"></button>
+<div id="timer" class="row">
+    <h1 class="values text-center bg-secondary text-white col-12 align-items-center justify-content-center"></h1>
 </div>
-<div class="debug"></div>
+
+<div class="d-flex justify-content-center">
+    <%-include("./slide.ejs") %>
+</div>
+
+<br>
+
+<div id="vote" class="d-flex justify-content-center max-width">
+    <div class="row">
+        <button type="button" class="col btn btn-danger" id="failButton"></button>
+        <div class="col-8 bg-light bg-gradient">
+            <div class="row">
+                <div class="col bg-warning d-flex align-items-center justify-content-center">
+                    <img class="random-img" width="90%" height="95%">
+                </div>
+            </div>
+        </div>
+        <button type="button" class="col btn btn-success" id="correctButton"></button>
+    </div>
+</div>
+
+<!-- <div class="debug"></div> -->
 
 <script>
 
     $(function () {
         const point = 100;
-        
-        let score = 0;
-
-        var array = [
+        const array = [
             "images/correct/spanyan (1).png",
             "images/correct/spanyan (2).png",
             "images/correct/spanyan (3).png",
@@ -33,7 +49,49 @@
             "images/fail/spanyan (12).png"
         ];
 
+        let score = 0;
         var length = array.length;
+
+        var timerInstance = new easytimer.Timer();
+
+        function getData() {
+            $.ajax({
+                url: '/main',
+                type: 'POST',
+                data: {
+                    'score': score
+                },
+                dataType: 'text'
+            }).done(function( data, textStatus, jqXHR ) {
+                //成功
+                console.log("成功")
+            }).fail(function( jqXHR, textStatus, errorThrown) {
+                //失敗
+                console.log("失敗")
+            }).always(function( jqXHR, textStatus) {
+                //通信完了
+                console.log("通信完了")
+            });
+            
+            window.location.href = '../result';
+            }
+
+        function countDown_Timer(time) {
+            timerInstance.start({countdown: true, startValues: {seconds: time}});
+
+            timerInstance.addEventListener('secondsUpdated', function (e) {
+                $('#timer .values').text(timerInstance.getTimeValues().toString());
+            });
+
+            timerInstance.addEventListener('targetAchieved', function (e) {
+                alert('Time is up!');
+                timerInstance.stop();
+
+                // $.post('/result', `point=${point}`)
+                getData()
+
+            });
+        }
 
         function setRandomImage() {
             var random_num = Math.floor(Math.random() * length);
@@ -41,7 +99,7 @@
             let random_img = array[random_num]
 
             $(".random-img").attr("src", random_img);
-            $(".debug").text(score);
+            // $(".debug").text(score);
         }
 
         function checkAnswer(params) {
@@ -58,15 +116,16 @@
             
             setRandomImage();
         }
-    
+
+        countDown_Timer(30);
         setRandomImage();
 
-        $("#failButton").on("click", function () {
+        $("#failButton").on("click touchend", function () {
             checkAnswer("fail")
 
         })
 
-        $("#correctButton").on("click", function () {
+        $("#correctButton").on("click touchend", function () {
             checkAnswer("correct")
             
         })

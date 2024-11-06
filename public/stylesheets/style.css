@@ -1,18 +1,63 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url('/images/haikei.png'); /* 背景画像のパス */
+  background-repeat: no-repeat; /* 繰り返さない */
+  background-size: cover; /* 背景画像が画面全体を覆う */
+  height: 100vh; /* ビューポートの高さを100%に設定 */
+  font-family: 'Arial', sans-serif; /* フォントを設定 */
 }
 
 a {
   color: #00B7FF;
 }
 
+html, css{
+  touch-action:none;
+}
+
 .carousel-control-prev-icon, .carousel-control-next-icon {
-  height: 100px;
-  width: 100px;
+  /* height: 100px;
+  width: 100px; */
   outline: black;
   background-color: rgba(0, 0, 0, 0.3);
   background-size: 100%, 100%;
   border-radius: 50%;
 }
+
+.overlay {
+  top: 0;
+  left: 0;
+  width: 100%; /* 幅を100%に設定 */
+  height: 100%; /* 高さを100%に設定 */
+  background-color: rgba(0, 0, 0, 0.6); /* 黒の半透明を薄く調整 */
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 中央揃え */
+  color: white; /* テキストの色を白に設定 */
+  text-align: left; /* テキストを左寄せ */
+}
+
+.container { 
+  padding-right: 15px; 
+  padding-left: 15px; 
+  margin-right: auto; 
+  margin-left: auto; 
+} 
+
+/* @media (min-width: 768px) { 
+  .container { 
+      width: 750px; 
+      } 
+  } 
+
+@media (min-width: 992px) { 
+  .container { 
+      width: 970px; 
+      } 
+  } 
+
+@media (min-width: 1200px) { 
+  .container { 
+      width: 1170px; 
+      } 
+  } */
 

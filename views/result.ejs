@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>結果</title>
+    <link href="/stylesheets/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container align-items-center max-width overlay d-flex flex-column justify-content-center">
+        <div class="text-center">
+            <h1 class="">結果です！</h1>
+            <br>
+            <h2 id="result">SCORE</h2>
+            <h1 id="score"><%= locals.score %> 点！</h1>
+            <!-- <h1 id="score"><%= score %> 点！</h1> -->
+        </div>
+        <div class="d-grid gap-2">
+            <button type="button" class="btn btn-danger" onclick="location.href='/main'">リトライ</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='/'">ホームへ</button>
+        </div>
+    </div>
+</body>
+</html>

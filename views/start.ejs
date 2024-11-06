@@ -6,53 +6,57 @@
     <title>Start Page</title>
     <style>
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            background: linear-gradient(to bottom right, #6a11cb, #2575fc); /* グラデーション背景 */
-            font-family: 'Arial', sans-serif; /* フォントを設定 */
+            padding: 0;
+            background-image: url('/images/haikei.png'); /* 背景画像のパス */
+            background-repeat: no-repeat; /* 繰り返さない */
+            background-size: cover; /* 背景画像が画面全体を覆う */
+            height: 100vh; /* ビューポートの高さを100%に設定 */
+            display: flex; /* フレックスボックスを使用 */
+            justify-content: center; /* 水平方向に中央揃え */
+            align-items: center; /* 垂直方向に中央揃え */
+            flex-direction: column; /* 縦方向に要素を並べる */
         }
-        #gameArea {
-            text-align: center; /* 中央揃え */
-            margin-bottom: 20px; /* テキストのための余白を追加 */
-            background-color: rgba(255, 255, 255, 0.9); /* 半透明の白背景 */
-            padding: 20px; /* 内側の余白 */
-            border-radius: 15px; /* 角を丸くする */
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* シャドウ効果 */
+        .overlay {
+            position: absolute; /* 絶対位置指定 */
+            top: 0;
+            left: 0;
+            width: 100%; /* 幅を100%に設定 */
+            height: 100%; /* 高さを100%に設定 */
+            background-color: rgba(0, 0, 0, 0.6); /* 黒の半透明を薄く調整 */
+            display: flex; /* フレックスボックスを使用 */
+            flex-direction: column; /* 縦に並べる */
+            justify-content: center; /* 垂直方向に中央揃え */
+            align-items: center; /* 水平方向に中央揃え */
+            color: white; /* テキストの色を白に設定 */
+            text-align: center; /* テキストを中央寄せ */
         }
         #logo {
-            max-width: 80%;
-            height: auto;
-            margin-bottom: 20px; /* 画像を少し上にするための余白 */
+            max-width: 80%; /* ロゴの最大幅を80%に設定して2倍にする */
+            height: auto; /* 高さは自動設定 */
+            margin-bottom: 15px; /* ボタンとの間に余白を追加 */
         }
-        #tapText {
-            margin: 0; /* 余計な余白を取り除く */
-            padding: 10px 20px; /* ボタン風に余白を追加 */
-            background-color: #007BFF; /* ボタンの色 */
-            color: white; /* ボタンの文字色 */
-            border: none; /* ボタンの枠線を削除 */
-            border-radius: 10px; /* ボタンの角を丸くする */
-            cursor: pointer; /* マウスポインターを変更 */
-            transition: background-color 0.3s; /* ホバー効果のトランジション */
+        #nextButton {
+            display: block; /* ブロック要素として扱う */
+            padding: 10px 20px;
+            background-color: #d94a6a; /* 赤とピンクの中間色 */
+            color: white;
+            border: none;
+            border-radius: 10px; /* 角を丸くする */
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* ホバー時の背景色を変更 */
+            margin-top: 10px; /* ボタンの上にマージンを追加 */
         }
-        #tapText:hover {
-            background-color: #0056b3; /* ホバー時の色 */
+        #nextButton:hover {
+            background-color: #c44161; /* ホバー時の色（赤寄りに変更） */
         }
     </style>
 </head>
 <body>
-    <div id="gameArea">
-        <img src="/images/election.jpg" alt="ゲームロゴ" id="logo">
-        <p id="tapText">画面をタップしてください</p> <!-- タップの指示テキスト -->
+    <div class="overlay">
+        <img src="/images/logo_fuchi.png" alt="ゲームロゴ" id="logo"> <!-- ロゴを中央に配置 -->
+        <button id="nextButton" onclick="location.href='/story'">次へ</button> <!-- storyページに移動 -->
     </div>
-
-    <!-- タップで移動するスクリプト -->
-    <script>
-        document.getElementById('tapText').addEventListener('click', () => {
-            window.location.href = '/story'; // クリックでstoryページへ移動
-        });
-    </script>
 </body>
 </html>

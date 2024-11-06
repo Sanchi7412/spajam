@@ -2,49 +2,70 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
+        <link href="/stylesheets/style.css" rel="stylesheet">
         <title>えれくしょん！</title>
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-
         <style>
-        #mainButton{
-            margin: 0; /* 余計な余白を取り除く */
-            padding: 10px 20px; /* ボタン風に余白を追加 */
-            background-color: #007BFF; /* ボタンの色 */
-            color: white; /* ボタンの文字色 */
-            border: none; /* ボタンの枠線を削除 */
-            border-radius: 10px; /* ボタンの角を丸くする */
-            cursor: pointer; /* マウスポインターを変更 */
-            transition: background-color 0.3s; /* ホバー効果のトランジション */
-        }
-        .sou{
-            position: absolute; /* 絶対位置指定 */
-            top: 0;
-            left: 0;
-            width: 100%; /* 幅を100%に設定 */
-            height: 100%; /* 高さを100%に設定 */
-            background-color: rgba(0, 0, 0, 0.7); /* 黒の半透明 */
-            display: flex; /* フレックスボックスを使用 */
-            justify-content: center; /* 中央揃え */
-            align-items: center; /* 中央揃え */
-            color: white; /* テキストの色を白に設定 */
-            text-align: center; /* テキストを中央揃え */
-        }
+            body {
+                margin: 0;
+                padding: 0;
+                background-image: url('/images/haikei.png'); /* 背景画像のパス */
+                background-repeat: no-repeat; /* 繰り返さない */
+                background-size: cover; /* 背景画像が画面全体を覆う */
+                height: 100vh; /* ビューポートの高さを100%に設定 */
+                color: white; /* テキストの色を白に設定 */
+                display: flex; /* フレックスボックスを使用 */
+                font-size: 80px;
+            }
+            .overlay {
+                position: absolute; /* 絶対位置指定 */
+                top: 0;
+                left: 0;
+                width: 100%; /* 幅を100%に設定 */
+                height: 100%; /* 高さを100%に設定 */
+                background-color: rgba(0, 0, 0, 0.7); /* 黒の半透明 */
+                display: flex; /* フレックスボックスを使用 */
+                justify-content: center; /* 中央揃え */
+                align-items: center; /* 中央揃え */
+                color: white; /* テキストの色を白に設定 */
+                text-align: left; /* テキストを左寄せ */
+            }
+            #cont {
+                position: absolute; /* 絶対位置指定 */
+                text-align: center; /* テキストの中央揃え */
+                margin-top: -160px; /* 上に移動 */
+            }
+            #start {
+                display: flex; /* フレックスボックスを使用 */
+                margin: 20px auto 0; /* 上中央揃えと上部に余白 */
+                padding: 10px 20px;
+                background-color: #d94a6a; /* 赤とピンクの中間色 */
+                color: white;
+                border: none;
+                border-radius: 10px; /* 角を丸くする */
+                cursor: pointer;
+                font-size: 40px;
+                transition: background-color 0.3s; /* ホバー時の背景色を変更 */
+            }
+            #start:hover {
+                background-color: #c44161; /* ホバー時の色（赤寄りに変更） */
+            }
+            #game {
+                max-width: 150%; /* ロゴの最大幅を150%に設定して1.5倍にする */
+                height: auto; /* 高さは自動設定 */
+                margin-bottom: 15px; /* ボタンとの間に余白を追加 */
+            }
         </style>
-
-
-
-
-
     </head>
     <body>
-        <h1 id="sou">操作説明動画</h1>
-            <h3>間違っているところを見つけて間違いを報告しよう</h3>
-        <video src="video.~~" autoplay playsinline></video>  <!--　~~に説明動画挿入予定-->
-
-
-
-        <button type="button" id="mainButton" class="btn btn-outline-primary" onclick="location.href='/main'">スタート！</button>  <!--main画面に遷移-->
+        <div class="overlay">
+            <div id="cont">
+                <h4>ルール説明</h4> 
+                <div>
+                    <img src="/images/messageImage.jpg" alt="ゲーム説明" id="game">
+                </div>
+                <button type="button" id="start" onclick="location.href='/main'">スタート</button>
+            </div>
+        </div>
     </body>
 </html>
+
