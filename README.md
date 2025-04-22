@@ -3,7 +3,7 @@
 テーマ「政治」を基に、チームにて開発した不正選挙を見抜くwebアプリケーション型ゲーム.  
 4人のチームで開発し、デザイナー1, エンジニア3で24時間で開発.
 - 開発メンバー
-  - 石井 ([@Sanchi7412](https://github.com/Sanchi7412)) / 発案・フロント&バックエンド・インフラ担当
+  - 石井 ([@Sanchi7412](https://github.com/Sanchi7412)) / フロント&バックエンド・インフラ担当
   - 井口 ([@iguchiamu](https://github.com/iguchiamu)) / フロント担当
   - 佐々木 / バックエンド担当
   - 小澤 ([@rupori](https://github.com/rupori)) / デザイン担当  
