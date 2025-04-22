@@ -1,20 +1,25 @@
 # スパジャム道場2024-11 作品「えれくしょん！」
 ## 概要
 テーマ「政治」を基に、チームにて開発した不正選挙を見抜くwebアプリケーション型ゲーム.  
+有権者の写真と実際に投票した人の写真を見比べて、投票者の情報の正誤を判別する.  
+
 4人のチームで24時間内に開発.
-- 開発メンバー
+
+## 開発メンバー
   - 石井 ([@Sanchi7412](https://github.com/Sanchi7412)) / フロント&バックエンド・インフラ担当
   - 井口 ([@iguchiamu](https://github.com/iguchiamu)) / フロント担当
   - 佐々木 / バックエンド担当
   - 小澤 ([@rupori](https://github.com/rupori)) / デザイン担当  
 
 ## 使用技術
-言語: HTML, CSS, JavaSctipt  
-フレームワーク: Express.js, Bootstrap 5, jQuery  
-バックエンド: Node.js  
-タスク管理: Notion  
-バージョン管理: Github  
-その他: Tailscale(funnel)  
+| | |
+| ------------- | ------------- |
+| 言語 | HTML, CSS, JavaSctipt |
+| フレームワーク | Express.js, Bootstrap 5, jQuery |
+| バックエンド | Node.js |
+| タスク管理 | Notion |
+| バージョン管理 | Github |
+| その他 | Tailscale(funnel) |
 
 ## 所感
 Expressは授業で少し使ったのみ, デザインの経験なしから始め、最終的には動くWebAPPに出来たことはメンバー全員頑張ったなと思うところ.  
